@@ -1,0 +1,15 @@
+{% extends "transport/base.html" %}
+
+
+
+{% block content %}
+<div class="container">
+    <h2>Transport Schedule Confirmation</h2>
+    <p><strong>Name:</strong> {{ booking.name }}</p>
+    <p><strong>Direction:</strong> {{ booking.direction }}</p>
+    <p><strong>Time:</strong> {{ booking.time|date:"H:i" }}</p> <!-- Format the time -->
+    <p>Your transport schedule has been successfully created!</p>
+</div>
+{% endblock %}
+
+

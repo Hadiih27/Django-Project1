@@ -1,0 +1,25 @@
+
+/* confirmation.css */
+
+/* Center the confirmation message */
+.confirmation-message {
+    text-align: center;
+    font-size: 24px;
+    color: #ff66b2;
+    margin-top: 50px;
+}
+
+/* Button to go back to schedule */
+button {
+    padding: 12px;
+    background-color: #ff66b2; /* Pink color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff3399;
+}

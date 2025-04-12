@@ -1,0 +1,8 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Transport Schedule Confirmation</h2>
+  <p>Your transport has been scheduled successfully!</p>
+  <p><strong>Time:</strong> {{ transport_status.time }}</p>
+  <a href="{% url 'schedule_transport' %}">Go back and schedule another transport</a>
+{% endblock %}

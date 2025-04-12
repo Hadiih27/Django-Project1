@@ -1,0 +1,30 @@
+{% extends 'transport/base.html' %}
+
+{% block title %}Register - Nyoni Student Transport{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2 class="card-title">Register</h2>
+    </div>
+    <div class="card-body">
+        {% if messages %}
+            <div class="alert alert-danger">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+        <hr>
+        <p>Already have an account? <a href="{% url 'login_view' %}">Login</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

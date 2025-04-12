@@ -1,0 +1,40 @@
+{% extends "transport/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-danger text-white">
+            <h3 class="mb-0">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                Cancel Transport Booking
+            </h3>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Booking Details</h5>
+            <div class="mb-4">
+                <p><strong>Time:</strong> {{ transport_schedule.time }}</p>
+                <p><strong>Direction:</strong> {{ transport_schedule.direction }}</p>
+                <p><strong>Status:</strong> {{ transport_schedule.get_status_display }}</p>
+            </div>
+
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                <strong>Warning:</strong> This action cannot be undone.
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{% url 'schedule_transport' %}" class="btn btn-secondary me-md-2">
+                        <i class="fas fa-arrow-left me-1"></i> Back to Schedule
+                    </a>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash-alt me-1"></i> Confirm Cancellation
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

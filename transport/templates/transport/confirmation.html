@@ -1,0 +1,45 @@
+{% extends "transport/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2>Booking Confirmed</h2>
+    
+    <div class="booking-details">
+        <p><strong>Time:</strong> {{ transport_schedule.time }}</p>
+        <p><strong>Direction:</strong> {{ transport_schedule.direction }}</p>
+    </div>
+
+    <div class="booking-actions mt-4">
+        <a href="{% url 'cancel_transport' transport_schedule.id %}" class="btn btn-danger ml-2">
+            <i class="fas fa-times"></i> Cancel Booking
+        </a>
+        <a href="{% url 'rate_experience' %}" class="btn btn-success ml-2">
+            <i class="fas fa-star"></i> Next: Rate Experience
+        </a>
+    </div>
+</div>
+
+<style>
+    .booking-details {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .booking-actions {
+        margin-top: 30px;
+    }
+    .btn {
+        padding: 8px 15px;
+        text-decoration: none;
+        border-radius: 4px;
+   
+    }
+    .btn-success {
+        background-color: #b7d3fb;
+        color: white;
+  
+    }
+</style>
+{% endblock %}
